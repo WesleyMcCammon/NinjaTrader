@@ -1,0 +1,55 @@
+﻿<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="351">
+	<Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="125"></ColumnDefinition>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"></RowDefinition>
+		</Grid.RowDefinitions>
+		<StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+			<Border BorderBrush="#FF1986D1" BorderThickness="0 0 0 1" VerticalAlignment="Top">
+				<StackPanel Orientation="Horizontal">
+					<Label Foreground="Black" Content="Accounts" FontSize="16" />
+				</StackPanel>
+			</Border>
+			<ListBox Margin="10,5,0,0"
+                     HorizontalAlignment="Left"
+                     FontSize="10"
+                     BorderThickness="0"
+                     x:Name="AccountListBox"
+				 SelectionMode="Multiple" Background="#00000000">
+				<ListBox.ItemContainerStyle>
+					<Style TargetType="ListBoxItem">
+						<Style.Triggers>
+							<Trigger Property="IsSelected" Value="True" >
+								<Setter Property="FontWeight" Value="Bold" />
+								<Setter Property="Background" Value="Transparent" />
+								<Setter Property="Foreground" Value="Black" />
+							</Trigger>
+						</Style.Triggers>
+						<Style.Resources>
+							<SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+						</Style.Resources>
+					</Style>
+				</ListBox.ItemContainerStyle>
+			</ListBox>
+		</StackPanel>
+		<StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="2">
+			<Border BorderBrush="#FF1986D1" BorderThickness="0 0 0 1" VerticalAlignment="Top">
+				<StackPanel Orientation="Horizontal">
+					<Label Foreground="Black" Content="Orders" FontSize="16" />
+				</StackPanel>
+			</Border>
+			<Border BorderBrush="#FF1986D1" BorderThickness="0 0 0 1" VerticalAlignment="Top">
+				<StackPanel Orientation="Horizontal">
+					<Label Foreground="Black" Content="Open Orders" FontSize="12" Margin="3, 0, 0, 0" />
+				</StackPanel>
+			</Border>
+			<Border BorderBrush="#FF1986D1" BorderThickness="0 0 0 1" VerticalAlignment="Top">
+				<Label Foreground="Black" Content="Pending Orders" FontSize="12" Margin="3, 0, 0, 0" />
+			</Border>
+		</StackPanel>
+	</Grid>
+</Page>
